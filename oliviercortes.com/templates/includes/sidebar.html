@@ -3,20 +3,23 @@
           <nav>
             <h3>Pages</h3>
             <ul>
-              <li><a href="{{ SITEURL }}">News home</a></li>
-              <li><a href="{{ SITEURL }}/categories.html">Categories</a></li>
-              <li><a href="{{ SITEURL }}/archives.html">Archives</a></li>
-              <li><a href="{{ SITEURL }}/tags.html">Tags</a></li>
-            {% if MENUITEMS %}
-              {% for name, uri in MENUITEMS %}
-              <li><a href="{{ uri|format(SITEURL)}}">{{ name }}</a></li>
-              {% endfor %}
-            {% endif %}
+              <li><a href="{{ SITEURL }}">Home</a></li>
+
             {% if DISPLAY_PAGES_ON_MENU %}
               {% for p in PAGES %}
               <li><a href="{{ SITEURL}}/{{ p.url }}"{% if p == page %} class="active"{% endif %}>{{ p.title }}</a></li>
               {% endfor %}
             {% endif %}
+
+            {% if MENUITEMS %}
+              {% for name, uri in MENUITEMS %}
+              <li><a href="{{ uri|format(SITEURL)}}">{{ name }}</a></li>
+              {% endfor %}
+            {% endif %}
+
+              <li><a href="{{ SITEURL }}/categories.html">Categories</a></li>
+              <li><a href="{{ SITEURL }}/archives.html">Archives</a></li>
+              <li><a href="{{ SITEURL }}/tags.html">Tags</a></li>
             </ul>
           </nav>
 
