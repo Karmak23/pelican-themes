@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% set template_name = 'archives' %}
 
 {% block content_title %}{{ SITENAME }} — Archives{% endblock %}
 
@@ -11,7 +12,7 @@
              <h2>{{ article.date.strftime('%B %Y') }}</h2>
              <ul>
           {% endif %}
-          
+
              <li>
                 <a rel="bookmark"
                   href="{{ SITEURL }}/{{ article.url }}"
