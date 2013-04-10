@@ -1,11 +1,11 @@
 <!-- includes/article_meta.html -->
             On <time datetime="{{ article.date.isoformat() }}">{{ article.locale_date }}</time>
-            in <em><a href="{{ SITEURL }}/{{ article.category.url }}">{{ article.category }}</a></em>
+            in <em><a href="{{ SITEURL }}/{{ article.category.url }}">{{ article.category }}</a></em>,
             by <a href="{{ SITEURL }}/{{ article.author.url }}">{{ article.author }}</a>
             {%- if article.tags %}
-              <br />Tags:
+              — Tags:
               {%- for tag in article.tags %}
-              <span  class="tag"><a rel="tag" href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a></span>{% if not loop.last %}, {% endif %}
+              <span class="tag"><a rel="tag" href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a></span>{% if not loop.last %}, {% endif %}
               {% endfor -%}
             {% endif -%}
             {%- if article.translations %}
