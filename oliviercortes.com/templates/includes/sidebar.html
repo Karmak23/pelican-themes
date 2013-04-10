@@ -3,7 +3,7 @@
           <nav>
             <h3>Map</h3>
             <ul>
-              <li><a href="{{ SITEURL }}">Home</a></li>
+              <li{%- if page and page.slug == 'home' %} class="active"{% endif -%}><a href="{{ SITEURL }}">Home</a></li>
 
             {% if DISPLAY_PAGES_ON_MENU %}
               {% for p in PAGES %}
