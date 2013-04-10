@@ -1,13 +1,13 @@
 
           <!-- begin includes/sidebar.html -->
           <nav>
-            <h3>Pages</h3>
+            <h3>Map</h3>
             <ul>
               <li><a href="{{ SITEURL }}">Home</a></li>
 
             {% if DISPLAY_PAGES_ON_MENU %}
               {% for p in PAGES %}
-              <li><a href="{{ SITEURL}}/{{ p.url }}"{% if p == page %} class="active"{% endif %}>{{ p.title }}</a></li>
+              <li{% if p == page %} class="active"{% endif %}><a href="{{ SITEURL}}/{{ p.url }}">{{ p.title }}</a></li>
               {% endfor %}
             {% endif %}
 
@@ -17,29 +17,32 @@
               {% endfor %}
             {% endif %}
 
-              <li><a href="{{ SITEURL }}/categories.html">Categories</a></li>
-              <li><a href="{{ SITEURL }}/archives.html">Archives</a></li>
-              <li><a href="{{ SITEURL }}/tags.html">Tags</a></li>
-            </ul>
-          </nav>
-
           {% if categories %}
-          <nav>
-            <h3>Categories</h3>
-            <ul>
             {% for cat, null in categories %}
               <li{%- if cat == category %} class="active"{% endif -%}><a href="{{ SITEURL }}/{{ cat.url }}">{{ cat }}</a></li>
             {% endfor %}
+          {% endif %}
             </ul>
           </nav>
-          {% endif %}
+
+
+          <nav>
+            <h3>Meta</h3>
+            <ul>
+              {% if categories|count > 1 %}
+              <li{%- if template_name == 'categories' %} class="active"{% endif -%}><a href="{{ SITEURL }}/categories.html">Categories</a></li>
+              {% endif %}
+              <li{%- if template_name == 'archives' %} class="active"{% endif -%}><a href="{{ SITEURL }}/archives.html">Archives</a></li>
+              <li{%- if template_name == 'tags' %} class="active"{% endif -%}><a href="{{ SITEURL }}/tags.html">Tags</a></li>
+            </ul>
+          </nav>
 
           <nav>
             <h3>
               {% if SIDEBAR_LINKS_TITLE %}
                 {{ SIDEBAR_LINKS_TITLE }}
               {% else %}
-              Liens
+              Links
               {% endif %}
             </h3>
             <ul>
@@ -60,16 +63,16 @@
                 {% endif %}
               </h3>
               <ul>
-              {% if FEED_ATOM %}
-                <li><a href="{{ FEED_DOMAIN }}/{{ FEED_ATOM }}">Flux ATOM</a></li>
-              {% endif %}
-              {% if FEED_RSS %}
-                <li><a href="{{ FEED_DOMAIN }}/{{ FEED_RSS }}">Flux RSS</a></li>
-              {% endif %}
               {% if SOCIAL %}
                 {% for name, url in SOCIAL %}
                 <li><a href="{{ url }}">{{ name }}</a></li>
                 {% endfor %}
+              {% endif %}
+              {% if FEED_ATOM %}
+                <li><a href="{{ FEED_DOMAIN }}/{{ FEED_ATOM }}">ATOM</a></li>
+              {% endif %}
+              {% if FEED_RSS %}
+                <li><a href="{{ FEED_DOMAIN }}/{{ FEED_RSS }}">RSS</a></li>
               {% endif %}
               </ul>
 
