@@ -32,7 +32,12 @@ h4, h5, h6 {
     line-height: 1.4em;
 }
 
-h2 { margin-top: 3em; margin-bottom: 1em }
+h2 { color: #555; margin-top: 2em; margin-bottom: 1em }
+
+h3 {
+    color: #666;
+
+}
 
 .meta {
     color: #999;
@@ -120,11 +125,10 @@ article:last-of-type:after {
 }
 
 #page-side li.active {
-    color: firebrick;
+    color: #f88017;
 }
-
 #page-side li.active a {
-    color: #222;
+    color: #f88017;
 }
 
 #page-foot {
@@ -204,7 +208,6 @@ span.tag {
 pre, img, figure, table {
     margin: 1em auto;
     overflow-x: auto;
-    border: 3px solid silver;
 }
 
 table td, table th {
