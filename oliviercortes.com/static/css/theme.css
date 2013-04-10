@@ -131,6 +131,10 @@ article:last-of-type:after {
     color: #f88017;
 }
 
+#page-main p {
+    margin: 0.5em 0;
+}
+
 #page-foot {
     border-top: 1px dotted #ddd;
     font-size: .8em;
