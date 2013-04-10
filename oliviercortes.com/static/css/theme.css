@@ -245,3 +245,17 @@ figure * { border: none; margin: auto; padding: auto; }
         font-size: 3.5em;
     }
 }
+
+/* ============== Pages specific ======================== */
+
+#page-home {
+    padding-top: 50px;
+}
+#page-home h1 {
+    display: none;
+}
+
+#page-home p {
+    font-size: 1.5em;
+    line-height: 1.25em;
+}
