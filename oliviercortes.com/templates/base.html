@@ -25,7 +25,7 @@
     <div id="page">
       <header id="page-head">
         <h1>
-          <a href="{{ SITEURL }}/index.html">{{ SITENAME }}</a>
+          <a href="{{ SITEURL }}">{{ SITENAME }}</a>
         </h1>
         {% if SITE_SUBTITLE %}
         <h2>
@@ -49,7 +49,7 @@
       <footer id="page-foot">
         <p>
         {% if FOOTER_TEXT %}
-
+          {{ FOOTER_TEXT }}
         {% else %}
         © 2013 <a href="http://oliviercortes.com/">Olivier Cortès</a> — SIRET 791 768 682 00019 — APE 6201Z — Powered by <a href="http://pelican.readthedocs.org">Pelican</a>
         {% endif %}
