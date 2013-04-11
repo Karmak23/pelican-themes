@@ -9,9 +9,9 @@
               {% endfor -%}
             {% endif -%}
             {%- if article.translations %}
-              <br />Languages:
-              [<a href="{{ SITEURL }}/{{ article.url }}">{{ article.lang or DEFAULT_LANG }}</a>]
-              {%- for translation in article.translations %}
-              <a href="{{ SITEURL }}/{{ translation.url }}">{{ translation.lang }}</a>
+              — Translations:
+              <strong><a href="{{ SITEURL }}/{{ article.url }}">{{ article.lang or DEFAULT_LANG }}</a></strong>
+              {%- for translation in article.translations -%}
+              , <a href="{{ SITEURL }}/{{ translation.url }}">{{ translation.lang }}</a>
               {% endfor -%}
              {% endif -%}

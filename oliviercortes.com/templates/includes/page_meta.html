@@ -1,0 +1,7 @@
+            {%- if page.translations %}
+              Translations:
+              <strong><a href="{{ SITEURL }}/{{ page.url }}">{{ page.lang or DEFAULT_LANG }}</a></strong>
+              {%- for translation in page.translations -%}
+              , <a href="{{ SITEURL }}/{{ translation.url }}">{{ translation.lang }}</a>
+              {% endfor -%}
+             {% endif -%}
