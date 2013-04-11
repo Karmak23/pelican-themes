@@ -1,7 +1,7 @@
 /* vim: set ts=4 sw=4 et: */
 
 @import url(normalize.css);
-@import url(http://fonts.googleapis.com/css?family=Lobster:400|Source+Sans+Pro:300,400);
+@import url(http://fonts.googleapis.com/css?family=Lobster:400|Source+Sans+Pro:300,400&subset=latin);
 
 @-webkit-keyframes fade {from {opacity: 0;} to { opacity: 1;}}
 @-moz-keyframes    fade {from {opacity: 0;} to { opacity: 1;}}
