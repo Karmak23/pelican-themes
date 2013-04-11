@@ -51,7 +51,9 @@
         {% if FOOTER_TEXT %}
           {{ FOOTER_TEXT }}
         {% else %}
-        © 2013 <a href="http://oliviercortes.com/">Olivier Cortès</a> — SIRET 791 768 682 00019 — APE 6201Z — Powered by <a href="http://pelican.readthedocs.org">Pelican</a>
+          © 2013 <a href="http://oliviercortes.com/">Olivier Cortès</a> — SIRET 791 768 682 00019 — APE 6201Z — Powered by <a href="http://pelican.readthedocs.org">Pelican</a>{% if LAST_MODIFIED %}
+             — Last modified {{ LAST_MODIFIED }}
+          {% endif %}
         {% endif %}
         </p>
         {% if GITHUB_URL %}<p><a id="github-link" href="{{ GITHUB_URL}}">Fork me on Github</a></p>{% endif %}
