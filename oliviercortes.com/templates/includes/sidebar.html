@@ -1,0 +1,81 @@
+
+          <!-- begin includes/sidebar.html -->
+          <nav>
+            <h3>Map</h3>
+            <ul>
+              <li{%- if page and page.slug == 'home' %} class="active"{% endif -%}><a href="{{ SITEURL }}">Home</a></li>
+
+            {% if DISPLAY_PAGES_ON_MENU %}
+              {% for p in PAGES %}
+              <li{% if p == page %} class="active"{% endif %}><a href="{{ SITEURL}}/{{ p.url }}">{{ p.title }}</a></li>
+              {% endfor %}
+            {% endif %}
+
+            {% if MENUITEMS %}
+              {% for name, uri in MENUITEMS %}
+              <li><a href="{{ uri|format(SITEURL)}}">{{ name }}</a></li>
+              {% endfor %}
+            {% endif %}
+
+          {% if categories %}
+            {% for cat, null in categories %}
+              <li{%- if cat == category %} class="active"{% endif -%}><a href="{{ SITEURL }}/{{ cat.url }}">{{ cat }}</a></li>
+            {% endfor %}
+          {% endif %}
+            </ul>
+          </nav>
+
+
+          <nav>
+            <h3>Meta</h3>
+            <ul>
+              {% if categories|count > 1 %}
+              <li{%- if template_name == 'categories' %} class="active"{% endif -%}><a href="{{ SITEURL }}/categories.html">Categories</a></li>
+              {% endif %}
+              <li{%- if template_name == 'archives' %} class="active"{% endif -%}><a href="{{ SITEURL }}/archives.html">Archives</a></li>
+              <li{%- if template_name == 'tags' %} class="active"{% endif -%}><a href="{{ SITEURL }}/tags.html">Tags</a></li>
+            </ul>
+          </nav>
+
+          <nav>
+            <h3>
+              {% if SIDEBAR_LINKS_TITLE %}
+                {{ SIDEBAR_LINKS_TITLE }}
+              {% else %}
+              Links
+              {% endif %}
+            </h3>
+            <ul>
+            {% if LINKS %}
+              {% for name, url in LINKS %}
+              <li><a href="{{ url }}">{{ name }}</a></li>
+              {% endfor %}
+            {% endif %}
+            </ul>
+
+            {% if FEED_ATOM or FEED_RSS or SOCIAL %}
+
+              <h3>
+                {% if SOCIAL_LINKS_TITLE %}
+                  {{ SOCIAL_LINKS_TITLE }}
+                {% else %}
+                Social
+                {% endif %}
+              </h3>
+              <ul>
+              {% if SOCIAL %}
+                {% for name, url in SOCIAL %}
+                <li><a href="{{ url }}">{{ name }}</a></li>
+                {% endfor %}
+              {% endif %}
+              {% if FEED_ATOM %}
+                <li><a href="{{ FEED_DOMAIN }}/{{ FEED_ATOM }}">ATOM</a></li>
+              {% endif %}
+              {% if FEED_RSS %}
+                <li><a href="{{ FEED_DOMAIN }}/{{ FEED_RSS }}">RSS</a></li>
+              {% endif %}
+              </ul>
+
+          {% endif %}
+          </nav>
+          <!-- end includes/sidebar.html -->
