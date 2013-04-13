@@ -1,6 +1,10 @@
 {% extends "base.html" %}
 
-{% block title %}{{ super() }} — {{ page.url }}{% endblock title %}
+{% block title %}{{ super() }} — {{ page.title }}{% endblock title %}
+
+{% block extra_headers %}
+    <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/static/css/page-{{ page.slug }}.css" />
+{% endblock extra_headers %}
 
 {%- block content %}
     <div id="page-{{ page.slug }}">
