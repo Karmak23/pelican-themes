@@ -13,7 +13,7 @@
 body {
     font-family: "Source Sans Pro", sans-serif;
     font-weight: 300;
-    font-size: 14px;
+    font-size: 15px;
     line-height: 1.5em;
     color: #444;
     background-color: #FAFAFA;
@@ -249,31 +249,16 @@ figure * { border: none; margin: auto; padding: auto; }
 
 @media screen and (max-width: 650px) {
     body {
-        font-size: 13px;
+        font-size: 14px;
     }
 }
 
 @media screen and (max-width: 500px) {
     body {
-        font-size: 12px;
+        font-size: 13px;
     }
 
     #page-head h1 {
         font-size: 3.5em;
     }
-}
-
-/* ============== Pages specific ======================== */
-
-#page-home {
-    padding-top: 50px;
-}
-#page-home h1 {
-    display: none;
-}
-
-#page-home p {
-    font-size: 1.5em;
-    line-height: 1.3em;
-    margin-bottom: 1em;
 }
