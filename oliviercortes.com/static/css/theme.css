@@ -9,7 +9,6 @@
 @-o-keyframes      fade {from {opacity: 0;} to { opacity: 1;}}
 @keyframes         fade {from {opacity: 0;} to { opacity: 1;}}
 
-
 body {
     font-family: "Source Sans Pro", sans-serif;
     font-weight: 300;
@@ -68,12 +67,10 @@ article {
 
 section header .meta {
     float: right;
-    margin-right: 40px;
 }
 
 article header .meta {
     float: inherit;
-    margin-right: inherit;
 }
 
 article header h1,
